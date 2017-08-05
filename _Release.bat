@@ -15,6 +15,8 @@ COPY /B res\_Dummy_.txt out\Replay
 
 COPY /B Square\Release\Square.exe out\Hako.exe
 C:\Factory\Tools\xcp.exe doc out
+ren out\Manual.txt マニュアル.txt
+ren out\Changelog.txt 更新履歴.txt
 
 out\Hako.exe /L
 IF ERRORLEVEL 1 START ?_LOG_ENABLED
