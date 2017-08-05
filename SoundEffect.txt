@@ -1,0 +1,14 @@
+C:\Dat\–³‰¹.wav
+Resource\Taira\explosion05.mp3
+Resource\Taira\jump12.mp3
+Resource\Taira\question.mp3
+Resource\Taira\Surprise.mp3
+Resource\Taira\coin05.mp3
+Resource\Taira\coin07.mp3
+Resource\Taira\coin04.mp3
+Resource\Taira\powerup04.mp3
+Resource\Taira\Crrect_answer2.mp3
+Resource\Taira\bomb.mp3
+Resource\Taira\guitar.mp3
+Resource\musmus_image_set\img11.mp3
+Resource\musmus_image_set\img11_wv_[270].mp3

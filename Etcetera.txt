@@ -1,0 +1,12 @@
+Etcetera\Sine90.txt
+Etcetera\DatStrings.txt
+Map\0001.bmp
+Map\0002.bmp
+Map\0003.bmp
+Map\0004.bmp
+Map\0005.bmp
+Map\0006.bmp
+Map\0007.bmp
+Map\0008.bmp
+Map\0009.bmp
+Map\Dummy.bmp

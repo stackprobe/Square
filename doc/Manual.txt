@@ -1,0 +1,551 @@
+===============================================================================
+
+　Hako / version $version$
+　　　　　　　　　　　　　　　　　　　　　　　　　　(C) 2013 cerulean.charlotte
+
+===============================================================================
+
+
+■ゲームの概要
+
+　白い箱のようなものを操作してゴール地点を目指す2Dアクションゲームです。
+
+　文字とエフェクト以外はほとんど単色の四角形で画面を構成しているため、
+　見た目はシンプルというかレトロというかシュールな感じになっています。
+　（グラフィックで描画するモードもあります）
+
+　マップを編集する機能もあるので、自分で作ったマップで遊ぶこともできます。
+
+　全９フロア（ステージ）
+　難度は高めです。
+
+　ゲームパッド推奨
+
+
+■注意
+
+　このソフトは、フリー画像素材・フリー音楽（効果音）素材を使用してます。
+　このソフト内で使用されている画像・音楽（効果音）を、このゲームを遊ぶ以外の用途には使用しないで下さい。
+
+
+■動作環境
+
+　Windows 7
+　確認していませんが Windows 8/8.1/10 でも動くかもしれません。
+
+　DirectX 9.0 以降
+　2Dゲームが快適に動作するCPU
+　Direct Graphic 対応のビデオカード
+　Direct Sound 対応のサウンドカード
+
+
+■インストール方法
+
+　アーカイブの中身をローカルディスク上の任意の場所にコピーして下さい。
+
+
+■アンインストール方法
+
+　レジストリなどは一切使っていません。
+　ファイルを削除するだけでアンインストールできます。
+
+
+■起動方法
+
+　Hako.exe を実行して下さい。
+
+
+■遊び方
+
+　●操作方法
+
+　　左右キー         ... 左右に移動
+　　下キー           ... 床の際から下に降りる
+　　Z                ... ジャンプ／決定
+　　X                ... 低速移動／キャンセル
+　　A                ... スコープ
+　　S                ... クイックリスタート
+　　スペースキー     ... 一時停止（ポーズメニュー）
+　　エスケープキー   ... 直ちにゲームを終了
+
+
+　　ゲームパッド対応
+　　ボタン設定は SETTING / PAD CONFIG から行ってください。
+
+　　低速移動ボタンを押しながら左右ボタンを押すと、箱はゆっくり移動します。
+
+　　ポーズメニューの RESTART を選択すれば、直ちにフロアをやり直すことができます。
+　　クイックリスタートはこれと同じ機能です。
+
+　　スコープボタンを押しながら上下左右ボタンを押すと、視界を調整できます。
+　　スコープボタンだけ押して離すとデフォルトの視界に戻ります。
+
+
+　　▲ゲームパッドについて
+
+　　　パッドはゲームを起動する前にＰＣに認識させて下さい。
+　　　ゲーム中に接続しても、たぶん正しく認識されません。
+
+　　　複数のパッドを接続している場合、ゲーム開始以降、最初にボタンを押したパッドが選ばれます。
+
+　　　▲ボタン設定について
+
+　　　　カーソルが指す機能を割り当てたいボタンを押して下さい。
+
+　　　　Z, X キーを押せば、入力を破棄してメニューに戻れます。
+
+　　　　１つのボタンに重複して機能を割り当てることはできません。
+　　　　ボタンが足りなくなったらスペースキーを押して割り当てをスキップして下さい。
+　　　　機能を割り当てたくない場合もスキップして下さい。
+
+
+　●操作のコツ
+
+　　マリオのＢダッシュのように１キャラ分の隙間は走り抜けられます。
+　　２キャラ分の隙間も走り抜けられます。
+
+　　床の端や１キャラ分の隙間から下に落ちたいとき、下ボタンを押すと落ちやすくなります。
+
+　　各キャラの座標は内部的に 0.001 ドットで制御しています。
+　　見た目は同じでも当たるか当たらないかの違いがあるかもしれません。
+
+　　速度の速い敵は、壁にぶつかった時けっこうめり込みます。
+　　当たらないだろうと思ったところでも当たるかもしれません。
+　　１キャラ分以上めり込むことはないはずなので、壁の向こうにいれば大丈夫。多分。。
+
+
+　●マップ上のオブジェクト
+
+　　白い箱 ... 主人公です。
+
+　　黄色っぽい箱 ... 壁です。
+
+　　赤く光る箱 ... 即死です。
+
+　　水色に光る箱 ... ゴール地点です。
+
+　　動く青い箱 ... 敵です。触ると即死です。
+
+　　跳ねる赤い箱 ... 敵です。触ると即死です。
+
+　　廻る緑の箱 ... 敵です。触ると即死です。
+
+
+　●タイムアタック
+
+　　全フロア制覇すると TIME ATTACK で遊べるようになります。
+
+　　全フロア制覇とかやってられんという場合は SETTING / UNLOCK EXTRA MODE を実行して下さい。
+　　（全フロア制覇したことにして TIME ATTACK, EDIT MODE を解放します）
+
+
+　●マップの自作
+
+　　全フロア制覇すると EDIT MODE からマップの自作ができるようになります。
+
+　　全フロア制覇とかやってられんという場合は SETTING / UNLOCK EXTRA MODE を実行して下さい。
+　　（全フロア制覇したことにして TIME ATTACK, EDIT MODE を解放します）
+
+
+■リプレイ
+
+　リプレイを保存＆再生できます。
+　リプレイデータは Replay フォルダにファイルとして出力するので、単独で持ち運びできます。
+　リプレイデータの再生には、このゲームプログラムと当該マップデータが必要ですのでご注意下さい。
+
+　ミスしたときのリプレイも保存できるようになりました。
+　再スタート後、キーボードのＲキーを押すと直前にミスしたリプレイを保存します。
+
+　リプレイの保存を有効にするには SETTING / SAVE REPLAY DATA を ON にして下さい。
+　（各フロアクリア後に保存するか確認するようになります）
+
+　●制限
+
+　　１フロアのプレイ時間が１時間を超えるとリプレイを保存できません。
+　　この場合、クリアしても保存の確認画面をスキップします。
+　　（ここで言うプレイ時間とは、フロアのスタート又は最後にミスしてからの経過時間を指します）
+
+　　作成したリプレイデータは、同じバージョンでのみ再生可能です。
+
+
+■タイムアタック
+
+　ランクは以下のようになっています。（最高ランクはＳです）
+
+　　Ｓ > Ａ > Ｂ > Ｃ > Ｄ > Ｅ > Ｆ
+
+
+■編集モード
+
+　EDIT MODE / EDIT FLOORS からゲームを開始すると編集モードになります。
+　通常のプレイと同じように始まりますが、ポーズメニューの EDIT FLOOR が使えるようになります。
+　EDIT FLOOR を選択することによりマップ編集を開始しますが、
+　操作が面倒ならキーボードのＥキーを押しても同じ効果があるのでお使い下さい。
+　編集モードのときはエンディングをスキップします。リプレイも保存できません。
+
+　●マップ編集での操作方法
+
+　　マップ編集では主にマウスを使用します。
+
+　　左クリック ... マウスカーソルの位置に選択しているセルを配置
+　　右クリック ... マウスカーソルの位置のセルを空にする。
+　　シフトキーを押しながら左ドラッグ ... 画面の移動
+
+　　E ... マップ編集終了
+　　W ... マウスカーソルの位置をワープ先として記憶
+
+　●編集ウィンドウの説明
+
+　　MENU POS ... ウィンドウの位置を左端または右端に移動
+　　SELECT   ... 選択されているセルを表示
+　　X        ... 編集終了
+
+　　選択可能なセル
+
+　　　WL ... 壁
+　　　DT ... 即死する壁
+　　　ST ... スタート地点
+　　　GL ... ゴール地点
+
+　　　★スタート地点は必ず１つだけ配置します。
+
+　　　青いセル
+
+　　　　6 ... 青い箱、スタート時の進行方向は右
+　　　　3 ... 青い箱、スタート時の進行方向は右下
+　　　　2 ... 青い箱、スタート時の進行方向は下
+　　　　1 ... 青い箱、スタート時の進行方向は左下
+　　　　4 ... 青い箱、スタート時の進行方向は左
+　　　　7 ... 青い箱、スタート時の進行方向は左上
+　　　　8 ... 青い箱、スタート時の進行方向は上
+　　　　9 ... 青い箱、スタート時の進行方向は右上
+
+　　　　★数字と進行方向の対応はテンキー
+
+　　　赤いセル
+
+　　　　L  ... 赤い箱、スタート時の進行方向は左
+　　　　LS ... 赤い箱、スタート時の進行方向は左、左右の移動が遅い
+　　　　LF ... 赤い箱、スタート時の進行方向は左、左右の移動が速い
+　　　　R  ... 赤い箱、スタート時の進行方向は右
+　　　　RS ... 赤い箱、スタート時の進行方向は右、左右の移動が遅い
+　　　　RF ... 赤い箱、スタート時の進行方向は右、左右の移動が速い
+
+　　　緑のセル
+
+　　　　T6 ... 緑の箱、時計回り、スタート時の位置は回転軸の右
+　　　　T3 ... 緑の箱、時計回り、スタート時の位置は回転軸の右下
+　　　　T2 ... 緑の箱、時計回り、スタート時の位置は回転軸の下
+　　　　T1 ... 緑の箱、時計回り、スタート時の位置は回転軸の左下
+　　　　T4 ... 緑の箱、時計回り、スタート時の位置は回転軸の左
+　　　　T7 ... 緑の箱、時計回り、スタート時の位置は回転軸の左上
+　　　　T8 ... 緑の箱、時計回り、スタート時の位置は回転軸の上
+　　　　T9 ... 緑の箱、時計回り、スタート時の位置は回転軸の右上
+　　　　H6 ... 緑の箱、反時計回り、スタート時の位置は回転軸の右
+　　　　H3 ... 緑の箱、反時計回り、スタート時の位置は回転軸の右下
+　　　　H2 ... 緑の箱、反時計回り、スタート時の位置は回転軸の下
+　　　　H1 ... 緑の箱、反時計回り、スタート時の位置は回転軸の左下
+　　　　H4 ... 緑の箱、反時計回り、スタート時の位置は回転軸の左
+　　　　H7 ... 緑の箱、反時計回り、スタート時の位置は回転軸の左上
+　　　　H8 ... 緑の箱、反時計回り、スタート時の位置は回転軸の上
+　　　　H9 ... 緑の箱、反時計回り、スタート時の位置は回転軸の右上
+
+　　　　★数字とスタート時の位置の対応はテンキー
+
+
+　●マップのサイズの変更
+
+　　申し訳ありません、未実装です。
+　　というわけでマップデータファイルを直接編集していただくようお願いします。
+　　（ペイントなどでリサイズして下さい）
+
+　　マップが大きいほどロード時間や処理は長く重くなります。
+　　また、敵の数も多くなるほど処理が重くなります。
+
+
+　●ワープ機能
+
+　　編集中にミスする度にスタート地点へ戻されるのが煩わしいときは、ワープをお使い下さい。
+　　マップ編集中に任意のセルにカーソルを合わせ、キーボードのＷキーを押してその位置を記憶、
+　　その後プレイ中に同じくＷキーを押すと、最後に記憶した場所へ瞬時に移動します。
+　　そのフロアをクリアするかプレイ中止すると位置はクリアされます。
+
+
+■マップデータファイル
+
+　マップデータは Map フォルダの配下に .bmp 形式のファイルとして置いてあります。
+　なのでウィンドウズ付属のペイントなどで直接編集できます。
+
+　ネタバレを防ぐため最初はダミーデータを置いています。
+　編集モードが解放されるとオリジナルのマップデータをコピーします。
+
+　マップデータファイルを直接編集する前にゲームを終了して下さい。
+
+
+　●マップデータの仕様
+
+　　サイズの制限
+
+　　　幅   ... 40ドット以上、1000ドット以下
+　　　高さ ... 30ドット以上、1000ドット以下
+
+　　色とオブジェクトの対応（色の表記はＲＧＢ）
+
+　　　  0,   0,   0 ... 空間
+　　　255, 242,   0 ... 壁
+　　　237,  28,  36 ... 即死する壁
+　　　255, 255, 255 ... スタート地点
+　　　  0, 162, 232 ... ゴール地点
+　　　 63,  72, 204 ... 青い箱 6
+　　　 63,  72, 205 ... 青い箱 3
+　　　 63,  72, 206 ... 青い箱 2
+　　　 63,  72, 207 ... 青い箱 1
+　　　 63,  72, 208 ... 青い箱 4
+　　　 63,  72, 209 ... 青い箱 7
+　　　 63,  72, 210 ... 青い箱 8
+　　　 63,  72, 211 ... 青い箱 9
+　　　255, 174, 201 ... 赤い箱 L
+　　　255, 174, 202 ... 赤い箱 LS
+　　　255, 174, 203 ... 赤い箱 LF
+　　　255, 174, 204 ... 赤い箱 R
+　　　255, 174, 205 ... 赤い箱 RS
+　　　255, 174, 206 ... 赤い箱 RF
+　　　 34, 177,  76 ... 緑の箱 T6
+　　　 34, 177,  77 ... 緑の箱 T3
+　　　 34, 177,  78 ... 緑の箱 T2
+　　　 34, 177,  79 ... 緑の箱 T1
+　　　 34, 177,  80 ... 緑の箱 T4
+　　　 34, 177,  81 ... 緑の箱 T7
+　　　 34, 177,  82 ... 緑の箱 T8
+　　　 34, 177,  83 ... 緑の箱 T9
+　　　 34, 177,  84 ... 緑の箱 H6
+　　　 34, 177,  85 ... 緑の箱 H3
+　　　 34, 177,  86 ... 緑の箱 H2
+　　　 34, 177,  87 ... 緑の箱 H1
+　　　 34, 177,  88 ... 緑の箱 H4
+　　　 34, 177,  89 ... 緑の箱 H7
+　　　 34, 177,  90 ... 緑の箱 H8
+　　　 34, 177,  91 ... 緑の箱 H9
+
+
+■グラフィックモード
+
+　画面をグラフィック（マップチップなど）で描画するモードを追加してみました。
+
+　SETTING / GRAPHIC MODE で OFF 以外を選択して下さい。
+　プレイ中にキーボードのＴキーを押して変更することもできます。
+
+
+■素材提供（敬称略）
+
+　●エンディングイラスト
+
+　　礎 たちつ
+　　http://yuzuriha8110.wixsite.com/tatitu
+
+　●画像
+
+　　ぴぽや
+　　http://piposozai.blog76.fc2.com/
+
+　　First Seed Material
+　　http://www.tekepon.net/fsm
+
+　　臼井の会 ＲＰＧツクール素材支部
+　　http://usui.moo.jp/rpg_tukuru.html
+
+　●ＢＧＭ・ＳＥ
+
+　　フリーBGM・音楽素材MusMus
+　　http://musmus.main.jp/
+
+　●ＳＥ
+
+　　小森平
+　　http://taira-komori.jpn.org/
+
+
+■このゲームの製作者
+
+　cerulean.charlotte
+　http://cerulean.fam.cx/
+
+　連絡先 -> cerulean.charlotte@gmail.com
+
+
+■ライセンス表記
+
+==== DxLib ====
+
+DX Library Copyright (C) 2001-2014 Takumi Yamada.
+
+- - -
+
+libjpeg　Copyright (C) 1991-2013, Thomas G. Lane, Guido Vollbeding.
+
+- - -
+
+libpng　Copyright (C) 2004, 2006-2012 Glenn Randers-Pehrson.
+zlib　Copyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
+
+- - -
+
+libtiff　Copyright (c) 1988-1997 Sam Leffler
+libtiff　Copyright (c) 1991-1997 Silicon Graphics, Inc.
+
+- - -
+
+Copyright (C) 2002-2009 Xiph.org Foundation
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+- Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+- Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+- Neither the name of the Xiph.org Foundation nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
+OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+==== Camellia ====
+
+Copyright (c) 2006,2007
+NTT (Nippon Telegraph and Telephone Corporation) . All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer as
+  the first lines of this file unmodified.
+2. Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY NTT ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL NTT BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+==== MT19937 ====
+
+A C-program for MT19937, with initialization improved 2002/1/26.
+Coded by Takuji Nishimura and Makoto Matsumoto.
+
+Before using, initialize the state by using init_genrand(seed)
+or init_by_array(init_key, key_length).
+
+Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+  1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  3. The names of its contributors may not be used to endorse or promote
+     products derived from this software without specific prior written
+     permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+==== SHA-512 ====
+
+Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+All rights reserved.
+
+This package is an SSL implementation written
+by Eric Young (eay@cryptsoft.com).
+The implementation was written so as to conform with Netscapes SSL.
+
+This library is free for commercial and non-commercial use as long as
+the following conditions are aheared to.  The following conditions
+apply to all code found in this distribution, be it the RC4, RSA,
+lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+included with this distribution is covered by the same copyright terms
+except that the holder is Tim Hudson (tjh@cryptsoft.com).
+
+Copyright remains Eric Young's, and as such any Copyright notices in
+the code are not to be removed.
+If this package is used in a product, Eric Young should be given attribution
+as the author of the parts of the library used.
+This can be in the form of a textual message at program startup or
+in documentation (online or textual) provided with the package.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:
+   "This product includes cryptographic software written by
+    Eric Young (eay@cryptsoft.com)"
+   The word 'cryptographic' can be left out if the rouines from the library
+   being used are not cryptographic related :-).
+4. If you include any Windows specific code (or a derivative thereof) from
+   the apps directory (application code) you must include an acknowledgement:
+   "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+
+THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+The licence and distribution terms for any publically available version or
+derivative of this code cannot be changed.  i.e. this code cannot simply be
+copied and put under another distribution licence
+[including the GNU Public Licence.]
+
