@@ -14,6 +14,7 @@ MD out\Replay
 COPY /B res\_Dummy_.txt out\Replay
 
 COPY /B Square\Release\Square.exe out\Hako.exe
+COPY /B AUTHORS out
 C:\Factory\Tools\xcp.exe doc out
 ren out\Manual.txt ƒ}ƒjƒ…ƒAƒ‹.txt
 
