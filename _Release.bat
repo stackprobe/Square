@@ -23,4 +23,4 @@ IF ERRORLEVEL 1 START ?_LOG_ENABLED
 C:\Factory\SubTools\zip.exe /G out Hako
 C:\Factory\Tools\summd5.exe /M out
 
-PAUSE
+IF NOT "%1" == "/-P" PAUSE
